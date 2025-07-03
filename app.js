@@ -2,3 +2,26 @@ require('.dotenv').config();
 
 const express = require('express');
 const expresslayouts = require('express-ejs-layouts');
+
+const app = express();
+const port = 3000 || process.env.PORT;
+
+//helps passes data from page to page or database
+app.use(express.urlencoded ({extended: true}));
+app.use(express.json());
+
+//stactic files
+app.use(express.static('public'));
+
+//Templeting engine
+//Used to start applicaton
+app.use(expresslayouts);
+app.set('view engine','ejs');
+
+app.get('/', function(req, res){
+    res.render('index');
+})
+
+app.listen(port, ()=>{
+    console.log(`App listening on port ${port}`);
+})
