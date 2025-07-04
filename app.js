@@ -1,4 +1,4 @@
-require('.dotenv').config();
+require('dotenv').config();
 
 const express = require('express');
 const expresslayouts = require('express-ejs-layouts');
@@ -16,6 +16,7 @@ app.use(express.static('public'));
 //Templeting engine
 //Used to start applicaton
 app.use(expresslayouts);
+app.set('layout','./layouts/main')
 app.set('view engine','ejs');
 
 app.get('/', function(req, res){
