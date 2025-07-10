@@ -7,7 +7,10 @@ exports.homepage = async(req,res) =>{
     };
 
 
-res.render('index',locals);
+res.render('index',{
+    locals,
+    layout:'../views/layouts/font-page'
+});
 }
 
 //GET About
