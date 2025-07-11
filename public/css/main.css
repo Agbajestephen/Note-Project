@@ -64,3 +64,30 @@ h1,h2,h3,h4,h5,h6{
     --bs-pagination-active-bg: var(--bs-primary-rgb);
     --bs-pagination-active-border-color: var(--bs-primary-rgb);
 }
+
+/* Home */
+@media (min-width:1200px){
+    .home{
+        background: 
+        url('../img/human-1.svg') left bottom no-repeat,
+        url('../img/human-2.svg') right bottom no-repeat,
+        url('../img/noise-bg.png') left top repeat,
+        var(--background-color);
+        ;
+}
+}
+
+
+.home-title::before{
+    content: url('../img/stars.svg');
+    position: absolute;
+    left: -50px;
+    top: -30px;
+}
+
+.home-title::after{
+    content: url('../img/stars.svg');
+    position: absolute;
+    right: -50px;
+    bottom: -30px;
+}
