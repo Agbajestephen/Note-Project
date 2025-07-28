@@ -3,9 +3,15 @@ require('dotenv').config();
 const express = require('express');
 const expresslayouts = require('express-ejs-layouts');
 const connectDB =require('./server/config/db');
+const session = require('express-session');
+const passport = require ('passport');
+const MongoStore = require('connect-mongo');
 
 const app = express();
 const port = 3000 || process.env.PORT;
+
+app.use(passport.initialize());
+//app.use(passport.session());
 
 //helps passes data from page to page or database
 app.use(express.urlencoded ({extended: true}));
@@ -25,6 +31,7 @@ app.set('layout','./layouts/main')
 app.set('view engine','ejs');
 
  //Routes
+ app.use('/', require('./server/routes/auth'));
  app.use('/', require('./server/routes/index'));
  app.use('/', require('./server/routes/dashboard'));
 
