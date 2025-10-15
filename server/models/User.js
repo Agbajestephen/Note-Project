@@ -1,5 +1,5 @@
-const mongoose = require("mongoose");
-const router = require("../routes");
+const mongoose = require('mongoose');
+// const router = require('../routes');
 
 const Schema = mongoose.Schema;
 const UserSchema = new Schema({
@@ -29,4 +29,4 @@ const UserSchema = new Schema({
   },
 });
 
-module.exports = mongoose.model("User", UserSchema);
+module.exports = mongoose.model('User', UserSchema);
