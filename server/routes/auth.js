@@ -23,8 +23,8 @@ router.get('/auth/google',
 
 router.get('/google/callback',
   passport.authenticate('google', {
-    failureRedirect: '/login-failure',
-    successRedirect: '/dashboard',
+    failureRedirect: '/login-failure',  
+    successRedirect: '/dashboard',  
   })
 );
 //  Route if something goes wrong
