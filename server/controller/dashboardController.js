@@ -6,7 +6,8 @@ exports.dashboard = async (req, res) => {
   };
 
   res.render('dashboard/index', {
+    // userName:req.user.firstName,
     locals,
-    layout: 'layouts/dashboard',
+    layout: '../views/layouts/dashboard',
   });
 };
